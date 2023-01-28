@@ -6,14 +6,16 @@ function Recipes() {
     const [meals, setMeals] = useState([])
 
         useEffect(() => {
-            setMeals([1,2,3,4,5,6,7,8,8,10])
+            fetch("http://localhost:4000/meals")
+            .then(response => response.json())
+            .then(data => setMeals(data))
         }, [])
 
     return (
         <div className="recipes">
             {
-                meals.map((meal) => {
-                    return <Recipe meal={meal} />
+                meals.map((meal, index) => {
+                    return <Recipe key={index} meal={meal} />
                 })
             }
         </div>
