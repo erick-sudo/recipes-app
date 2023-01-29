@@ -1,12 +1,14 @@
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import Recipes from './components/Recipes';
+import RecipeDetails from './components/RecipeDetails';
 
 
 function App() {
   return (
     <div className="App">
-      <Recipes />
+      <RecipeDetails />
+      {/* <Recipes /> */}
     </div>
   );
 }
